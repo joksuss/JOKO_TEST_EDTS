@@ -35,6 +35,7 @@ export class ProductPage {
     }
 
     async selectProductMadu(): Promise<void> {
+        await this.productMadu.scrollIntoViewIfNeeded()
         await this.productMadu.click();
     }
 
