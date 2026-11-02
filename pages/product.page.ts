@@ -12,6 +12,9 @@ export class ProductPage {
     get categoryMakanan(): Locator {
         return this.page.locator("[href='/xpress/category/makanan'] > .max-h-sm");
     }
+    get closeModal(): Locator {
+        return this.page.locator("[color='#151823']");
+    }
 
     get productMadu(): Locator {
         return this.page.locator(".cursor-pointer[href='/xpress/madurasa-madurasa-madu-jahe-merah-btl-160g'] .md-0");
@@ -27,6 +30,7 @@ export class ProductPage {
     }
 
     async selectMakanan(): Promise<void> {
+        await this.closeModal.click()
         await this.categoryMakanan.click();
     }
 
